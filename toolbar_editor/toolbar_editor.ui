@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Toolbar_Editor</class>
+ <widget class="QWidget" name="Toolbar_Editor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>330</width>
+    <height>220</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>330</width>
+    <height>220</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QComboBox" name="combo_menu">
+     <property name="toolTip">
+      <string>Select a menu</string>
+     </property>
+     <property name="whatsThis">
+      <string>Lists the avaliable menus to get the corresponding actions</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QComboBox" name="combo_toolbar">
+     <property name="toolTip">
+      <string>Select toolbar</string>
+     </property>
+     <property name="whatsThis">
+      <string>List the available toolbars. The selected one will be edited</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QListWidget" name="list_toolbar">
+     <property name="whatsThis">
+      <string>Lists the actions in the selected toolbar</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QToolButton" name="button_add_toolbar">
+       <property name="toolTip">
+        <string>Add new Toolbar</string>
+       </property>
+       <property name="text">
+        <string>New</string>
+       </property>
+       <property name="icon">
+        <iconset theme="list-add"/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="button_remove_toolbar">
+       <property name="toolTip">
+        <string>Delete selected toolbar</string>
+       </property>
+       <property name="text">
+        <string>Remove</string>
+       </property>
+       <property name="icon">
+        <iconset theme="list-remove"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" rowspan="2">
+    <widget class="QListWidget" name="list_menu">
+     <property name="whatsThis">
+      <string>Lists the available actions for the selected menu</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" rowspan="2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_up">
+       <property name="whatsThis">
+        <string>Moves the selected toolbar item up</string>
+       </property>
+       <property name="text">
+        <string>Move &amp;Up</string>
+       </property>
+       <property name="icon">
+        <iconset theme="arrow-up">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_down">
+       <property name="whatsThis">
+        <string>moves the selected toolbar item down</string>
+       </property>
+       <property name="text">
+        <string>Move &amp;Down</string>
+       </property>
+       <property name="icon">
+        <iconset theme="arrow-down">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_insert">
+       <property name="whatsThis">
+        <string>Adds the selected menu action to the toolbar</string>
+       </property>
+       <property name="text">
+        <string>&amp;Insert</string>
+       </property>
+       <property name="icon">
+        <iconset theme="list-add">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_remove">
+       <property name="whatsThis">
+        <string>Removes the selected item from the active toolbar</string>
+       </property>
+       <property name="text">
+        <string>&amp;Remove</string>
+       </property>
+       <property name="icon">
+        <iconset theme="list-remove">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_insert_separator">
+       <property name="whatsThis">
+        <string>Adds a separator after the selected toolbar item</string>
+       </property>
+       <property name="text">
+        <string>&amp;Separator</string>
+       </property>
+       <property name="icon">
+        <iconset theme="insert-horizontal-rule">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>combo_toolbar</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>Toolbar_Editor</receiver>
+   <slot>update_list_toolbar(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>294</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>409</x>
+     <y>18</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>update_list_toolbar(QString)</slot>
+ </slots>
+</ui>
