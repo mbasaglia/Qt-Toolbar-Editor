@@ -18,8 +18,8 @@ Include tolbar_editor.pri in the QMake project file.
 All the required files are in ./src
 
 
-Installing as a Designer Plugin
--------------------------------
+Installing as a Qt Designer/Creator Plugin
+------------------------------------------
 
 The sources for the designer plugin are in ./designer_plugin
 
