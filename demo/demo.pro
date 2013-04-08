@@ -1,14 +1,14 @@
 
 QT       += core gui
 
-OBJECTS_DIR = out/obj
-MOC_DIR = out/generated
-UI_DIR = out/generated
-RCC_DIR = out/generated
+OBJECTS_DIR = ../out/obj
+MOC_DIR = ../out/generated
+UI_DIR = ../out/generated
+RCC_DIR = ../out/generated
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-include(toolbar_editor/toolbar_editor.pri)
+include(../toolbar_editor.pri)
 
 TARGET = ToolbarEditor
 TEMPLATE = app

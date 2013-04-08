@@ -4,10 +4,10 @@ CONFIG += plugin
 QT += designer
 TARGET = toolbar_editor
 TEMPLATE = lib
-OBJECTS_DIR = ../../out/obj
-MOC_DIR = ../../out/generated
-UI_DIR = ../../out/generated
-RCC_DIR = ../../out/generated
+OBJECTS_DIR = ../out/obj
+MOC_DIR = ../out/generated
+UI_DIR = ../out/generated
+RCC_DIR = ../out/generated
 
 
 HEADERS += \

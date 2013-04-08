@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>330</width>
+    <width>462</width>
     <height>220</height>
    </rect>
   </property>
@@ -50,7 +50,7 @@
    <item row="2" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QToolButton" name="button_add_toolbar">
+      <widget class="QPushButton" name="button_add_toolbar">
        <property name="toolTip">
         <string>Add new Toolbar</string>
        </property>
@@ -65,7 +65,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="button_remove_toolbar">
+      <widget class="QPushButton" name="button_remove_toolbar">
        <property name="toolTip">
         <string>Delete selected toolbar</string>
        </property>

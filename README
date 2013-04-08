@@ -1,0 +1,45 @@
+Toolbar Editor
+==============
+
+This is a Qt widget that provides an editor for the actions in the toolbars
+of a QMainWindow.
+
+
+Demonstration
+-------------
+
+A simple demo of the widget is provided in ./demo
+
+
+Using it in a project
+---------------------
+
+Include tolbar_editor.pri in the QMake project file. 
+All the required files are in ./src
+
+
+Installing as a Designer Plugin
+-------------------------------
+
+The sources for the designer plugin are in ./designer_plugin
+
+Compile the library and install in
+(Qt SDK)/Tools/QtCreator/bin/designer/
+(Qt SDK)/(Qt Version)/(Toolchain)/plugins/designer
+
+cd designer_plugin && qmake && make && make install
+
+
+Latest Version
+--------------
+
+The latest version of the sources can be found at the following locations
+https://github.com/mbasaglia/Qt-Toolbar-Editor
+git://github.com/mbasaglia/Qt-Toolbar-Editor.git
+
+
+License
+-------
+
+LGPLv3+, See COPYING
+Copyright (C) 2013 Mattia Basaglia <mattia.basaglia@gmail.com>
