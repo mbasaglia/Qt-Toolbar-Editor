@@ -24,6 +24,10 @@
 #include <QMenu>
 #include <QToolBar>
 
+Q_DECLARE_METATYPE(QMenu*)
+Q_DECLARE_METATYPE(QToolBar*)
+Q_DECLARE_METATYPE(QAction*)
+
 Toolbar_Editor::Toolbar_Editor(QWidget *parent) :
     QWidget(parent), target(NULL)
 {
