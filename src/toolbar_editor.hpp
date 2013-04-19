@@ -45,7 +45,7 @@ public:
     void setTargetWindow(QMainWindow* w);
     QMainWindow* targetWindow() const { return target; }
 
-    QSize sizeHint();
+    QSize sizeHint() const;
 
 public slots:
     /**
