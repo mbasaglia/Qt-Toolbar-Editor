@@ -30,6 +30,7 @@ class Toolbar_Editor : public QWidget, private Ui::Toolbar_Editor
 {
     Q_OBJECT
     Q_PROPERTY(QMainWindow* targetWindow READ targetWindow WRITE setTargetWindow DESIGNABLE false)
+    Q_PROPERTY(Qt::ToolButtonStyle buttonStyle READ buttonStyle WRITE setButtonStyle )
 
 private:
 
@@ -40,21 +41,27 @@ public:
     explicit Toolbar_Editor(QWidget *parent = 0);
 
     /**
-     * Set the target window, will reset any changes
+     * \brief Set the target window, will reset any changes
      */
     void setTargetWindow(QMainWindow* w);
     QMainWindow* targetWindow() const { return target; }
 
     QSize sizeHint();
 
+    /**
+     * \brief Style of the buttons
+     */
+    Qt::ToolButtonStyle buttonStyle() const;
+    void setButtonStyle ( Qt::ToolButtonStyle style );
+
 public slots:
     /**
-     * Apply changes to the target window
+     * \brief Apply changes to the target window
      */
     void apply() const;
 
     /**
-     * Update menus and toolbars from the target window
+     * \brief Update menus and toolbars from the target window
      */
     void updateBars();
 

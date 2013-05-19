@@ -27,4 +27,5 @@ Test_Window::Test_Window(QWidget *parent) :
 {
     setupUi(this);
     toolbar_editor->setTargetWindow(this);
+    toolbar_editor->setButtonStyle(Qt::ToolButtonTextBesideIcon);
 }

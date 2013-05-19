@@ -32,6 +32,9 @@ Toolbar_Editor::Toolbar_Editor(QWidget *parent) :
     QWidget(parent), target(NULL)
 {
     setupUi(this);
+
+    foreach(QToolButton* b, findChildren<QToolButton*>())
+        b->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
 }
 
 void Toolbar_Editor::setTargetWindow(QMainWindow *w)
@@ -256,4 +259,16 @@ void Toolbar_Editor::on_button_add_toolbar_clicked()
 
     combo_toolbar->addItem(name);
     combo_toolbar->setCurrentIndex(combo_toolbar->count()-1);
+}
+
+
+void Toolbar_Editor::setButtonStyle(Qt::ToolButtonStyle style)
+{
+    foreach(QToolButton* b, findChildren<QToolButton*>())
+        b->setToolButtonStyle(style);
+}
+
+Qt::ToolButtonStyle Toolbar_Editor::buttonStyle() const
+{
+    return button_insert->toolButtonStyle();
 }
