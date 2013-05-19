@@ -46,7 +46,7 @@ public:
     void setTargetWindow(QMainWindow* w);
     QMainWindow* targetWindow() const { return target; }
 
-    QSize sizeHint();
+    QSize sizeHint() const;
 
     /**
      * \brief Style of the buttons

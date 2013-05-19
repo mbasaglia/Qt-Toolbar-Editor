@@ -43,7 +43,7 @@ void Toolbar_Editor::setTargetWindow(QMainWindow *w)
     updateBars();
 }
 
-QSize Toolbar_Editor::sizeHint()
+QSize Toolbar_Editor::sizeHint() const
 {
     return QSize(462,220);
 }
