@@ -198,13 +198,17 @@ void Toolbar_Editor::on_button_down_clicked()
 
 void Toolbar_Editor::on_button_insert_clicked()
 {
-    insert_action( list_menu->currentItem()->data(Qt::UserRole).value<QAction*>() );
+    QListWidgetItem *item = list_menu->currentItem();
+
+    if (item == Q_NULLPTR)
+        return;
+
+    insert_action( item->data(Qt::UserRole).value<QAction*>() );
 }
 
 void Toolbar_Editor::on_button_remove_clicked()
 {
     int to_rm = list_toolbar->currentRow();
-
 
     QList<QAction*>& list = toolbar_items[combo_toolbar->currentText()];
     if ( to_rm >= 0 && to_rm < list.size() )
