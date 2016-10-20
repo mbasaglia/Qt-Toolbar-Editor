@@ -31,7 +31,7 @@ class Toolbar_Editor : public QWidget, private Ui::Toolbar_Editor
     Q_OBJECT
     Q_PROPERTY(QMainWindow* targetWindow READ targetWindow WRITE setTargetWindow DESIGNABLE false)
     Q_PROPERTY(Qt::ToolButtonStyle buttonStyle READ buttonStyle WRITE setButtonStyle )
-    Q_PROPERTY(bool _customToolbarRemovalOnly READ customToolbarRemovalOnly WRITE setCustomToolbarRemovalOnly )
+    Q_PROPERTY(bool customToolbarRemovalOnly READ customToolbarRemovalOnly WRITE setCustomToolbarRemovalOnly )
 
 private:
 
