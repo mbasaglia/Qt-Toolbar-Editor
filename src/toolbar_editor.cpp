@@ -28,10 +28,13 @@ Q_DECLARE_METATYPE(QMenu*)
 Q_DECLARE_METATYPE(QToolBar*)
 Q_DECLARE_METATYPE(QAction*)
 
+const QString Toolbar_Editor::customToolbarNamePrefix = QString("custom_toolbar_");
+
 Toolbar_Editor::Toolbar_Editor(QWidget *parent) :
     QWidget(parent), target(NULL)
 {
     setupUi(this);
+    _customToolbarRemovalOnly = false;
 
     foreach(QToolButton* b, findChildren<QToolButton*>())
         b->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
@@ -160,6 +163,8 @@ void Toolbar_Editor::update_list_toolbar(QString name)
         list_toolbar->addItem(item);
     }
 
+    // check if toolbar removal is allowed
+    button_remove_toolbar->setEnabled(allowToolbarRemoval(name));
 }
 
 void Toolbar_Editor::on_button_up_clicked()
@@ -177,7 +182,6 @@ void Toolbar_Editor::on_button_up_clicked()
     list_toolbar->setCurrentRow(curr_index-1);
 }
 
-
 void Toolbar_Editor::on_button_down_clicked()
 {
 
@@ -191,20 +195,21 @@ void Toolbar_Editor::on_button_down_clicked()
 
     update_list_toolbar(combo_toolbar->currentText());
     list_toolbar->setCurrentRow(curr_index+1);
-
-
-
 }
 
 void Toolbar_Editor::on_button_insert_clicked()
 {
-    insert_action( list_menu->currentItem()->data(Qt::UserRole).value<QAction*>() );
+    QListWidgetItem *item = list_menu->currentItem();
+
+    if (item == Q_NULLPTR)
+        return;
+
+    insert_action( item->data(Qt::UserRole).value<QAction*>() );
 }
 
 void Toolbar_Editor::on_button_remove_clicked()
 {
     int to_rm = list_toolbar->currentRow();
-
 
     QList<QAction*>& list = toolbar_items[combo_toolbar->currentText()];
     if ( to_rm >= 0 && to_rm < list.size() )
@@ -213,7 +218,6 @@ void Toolbar_Editor::on_button_remove_clicked()
         update_list_toolbar(combo_toolbar->currentText());
         list_toolbar->setCurrentRow(to_rm-1);
     }
-
 }
 
 void Toolbar_Editor::on_button_insert_separator_clicked()
@@ -248,13 +252,18 @@ void Toolbar_Editor::insert_action(QAction *new_action)
 
 void Toolbar_Editor::on_button_remove_toolbar_clicked()
 {
-    toolbar_items.remove(combo_toolbar->currentText());
+    QString name = combo_toolbar->currentText();
+
+    if (!allowToolbarRemoval(name))
+        return;
+
+    toolbar_items.remove(name);
     combo_toolbar->removeItem(combo_toolbar->currentIndex());
 }
 
 void Toolbar_Editor::on_button_add_toolbar_clicked()
 {
-    QString name = QString("custom_toolbar_%1").arg(toolbar_items.size());
+    QString name = customToolbarNamePrefix + QString::number(toolbar_items.size());
     toolbar_items.insert(name,QList<QAction*>());
 
     combo_toolbar->addItem(name);
@@ -271,4 +280,22 @@ void Toolbar_Editor::setButtonStyle(Qt::ToolButtonStyle style)
 Qt::ToolButtonStyle Toolbar_Editor::buttonStyle() const
 {
     return button_insert->toolButtonStyle();
+}
+
+void Toolbar_Editor::setCustomToolbarRemovalOnly(bool flag)
+{
+    _customToolbarRemovalOnly = flag;
+
+    // check if toolbar removal is allowed
+    button_remove_toolbar->setEnabled(allowToolbarRemoval(combo_toolbar->currentText()));
+}
+
+bool Toolbar_Editor::customToolbarRemovalOnly() const
+{
+    return _customToolbarRemovalOnly;
+}
+
+bool Toolbar_Editor::allowToolbarRemoval(QString name)
+{
+    return !_customToolbarRemovalOnly || name.startsWith(customToolbarNamePrefix);
 }
