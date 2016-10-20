@@ -56,8 +56,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-add">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -71,8 +70,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-remove">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -113,8 +111,7 @@
        </property>
        <property name="icon">
         <iconset theme="arrow-up">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -131,8 +128,7 @@
        </property>
        <property name="icon">
         <iconset theme="arrow-down">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -162,8 +158,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-add">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -180,8 +175,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-remove">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -208,8 +202,7 @@
        </property>
        <property name="icon">
         <iconset theme="insert-horizontal-rule">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>

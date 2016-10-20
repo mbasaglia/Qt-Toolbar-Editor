@@ -31,14 +31,17 @@ class Toolbar_Editor : public QWidget, private Ui::Toolbar_Editor
     Q_OBJECT
     Q_PROPERTY(QMainWindow* targetWindow READ targetWindow WRITE setTargetWindow DESIGNABLE false)
     Q_PROPERTY(Qt::ToolButtonStyle buttonStyle READ buttonStyle WRITE setButtonStyle )
+    Q_PROPERTY(bool _customToolbarRemovalOnly READ customToolbarRemovalOnly WRITE setCustomToolbarRemovalOnly )
 
 private:
 
     QMainWindow* target;
     QMap<QString,QList<QAction*> > toolbar_items;
-    
+    bool _customToolbarRemovalOnly;
+
 public:
     explicit Toolbar_Editor(QWidget *parent = 0);
+    static const QString customToolbarNamePrefix;
 
     /**
      * \brief Set the target window, will reset any changes
@@ -53,6 +56,12 @@ public:
      */
     Qt::ToolButtonStyle buttonStyle() const;
     void setButtonStyle ( Qt::ToolButtonStyle style );
+
+    /**
+     * \brief Allow only non custom toolbars to be removed
+     */
+    bool customToolbarRemovalOnly() const;
+    void setCustomToolbarRemovalOnly(bool flag);
 
 public slots:
     /**
@@ -84,6 +93,8 @@ private slots:
 private:
     /// Insert a new action to the current toolbar
     void insert_action(QAction* new_action);
+
+    bool allowToolbarRemoval(QString name);
 };
 
 #endif // TOOLBAR_EDITOR_HPP
