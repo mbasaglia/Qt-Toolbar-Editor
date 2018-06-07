@@ -14,14 +14,14 @@ New Uris for this repos
 -----------------------
 
 For webview, replace
-https://github.com/mbasaglia/<repo> with
-https://gitlab.com/mattia.basaglia/<repo>
+https://github.com/mbasaglia/Qt-Toolbar-Editor with
+https://gitlab.com/mattia.basaglia/Qt-Toolbar-Editor
 
 For SSH remotes replace
-`git@github.com:mbasaglia/<repo>.git` with
-`git@gitlab.com:mattia.basaglia/<repo>.git`
+`git@github.com:mbasaglia/Qt-Toolbar-Editor.git` with
+`git@gitlab.com:mattia.basaglia/Qt-Toolbar-Editor.git`
 
 For HTTPS remotes replace
-`https://github.com/mbasaglia/<repo>.git` with
-`https://gitlab.com/mattia.basaglia/<repo>.git`
+`https://github.com/mbasaglia/Qt-Toolbar-Editor.git` with
+`https://gitlab.com/mattia.basaglia/Qt-Toolbar-Editor.git`
 
